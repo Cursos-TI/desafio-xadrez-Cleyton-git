@@ -1,23 +1,42 @@
 #include <stdio.h>
 
+void mover_Torre(int casas){
+    if (casas > 0){
+        printf("Torre - Direita\n");
+        mover_Torre(casas - 1);
+    }
+
+}
+
+void mover_Bispo(int casas){
+    if (casas > 0){
+        printf("Bispo - Cima\n");
+        printf("Bispo - Direita\n");
+        mover_Bispo(casas - 1);
+    }
+}
+
+void mover_Rainha(int casas){
+    if (casas > 0){
+        printf("Rainha - Esquerda\n");
+        mover_Rainha(casas - 1);
+    }
+}
+
+void mover_Cavalo(int casas){
+    if (casas > 0){
+        printf("Cavalo - Cima\n");
+        printf("Cavalo - Cima\n");
+        printf("Cavalo - Direita\n");
+        mover_Rainha(casas - 1);
+    }
+}
+
 int main(){
-    int i_torre = 0, i_bispo = 0, i_rainha = 0, i_cavalo = 0;
-    for (i_torre; i_torre <= 4; i_torre++){
-        printf("TORRE - Direita\n");
-    }
-    for (i_bispo; i_bispo <= 4; i_bispo++){
-        printf("BISPO - Cima\n");
-        printf("BISPO - Direita\n");
-    }
-    for (i_rainha; i_rainha <= 7; i_rainha++){
-        printf("RAINHA - Esquerda\n");
-    }
-    for (i_cavalo; i_cavalo <= 0; i_cavalo++){
-        for (int i_cavalo_subindo = 0; i_cavalo_subindo <= 1; i_cavalo_subindo++){
-            printf("CAVALO - Cima\n");    
-        }
-        printf("CAVALO - Direita\n");
-    }
-    
+    int i_torre = 5, i_bispo = 4, i_rainha = 8, i_cavalo = 1;
+    mover_Torre(i_torre);
+    mover_Bispo(i_bispo);
+    mover_Rainha(i_rainha);
+    mover_Cavalo(i_cavalo);
     return 0;
 }
